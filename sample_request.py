@@ -20,7 +20,7 @@ async def main() -> None:
 
     async with httpx.AsyncClient() as client:
         response = await client.post(
-            "http://0.0.0.0:8000/items/",
+            "http://0.0.0.0:37298/items/",
             json=data,  # httpx will handle JSON serialization
         )
         print(response.json())
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     asyncio.run(main())
 
     # Also demonstrate synchronous requests
-    r = requests.post("http://0.0.0.0:8000/items/", data=json.dumps(data))
+    r = requests.post("http://0.0.0.0:37298/items/", data=json.dumps(data))
     print(r.json())
